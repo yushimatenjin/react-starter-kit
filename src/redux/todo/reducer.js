@@ -1,15 +1,12 @@
 import actionTypes from './actionTypes'
 
 const initialState = {
-  todos: []
+  title: ''
 }
 export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD:
-      return {
-        ...state,
-        todos: action.payload
-      }
+      return [...state, action.payload]
 
     case actionTypes.REMOVE:
       return {
@@ -18,10 +15,7 @@ export default (state = initialState, action) => {
       }
 
     case actionTypes.RESET:
-      return {
-        ...state,
-        todos: action.payload
-      }
+      return []
     default:
       return state
   }
