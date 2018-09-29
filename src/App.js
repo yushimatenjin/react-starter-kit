@@ -45,6 +45,20 @@ class App extends Component {
           >
             Reset
           </button>
+          {todos.map((todo, index) => {
+            return (
+              <div key={index}>
+                <Todo todo={todo} />
+                <button
+                  onClick={() => {
+                    remove(inputTodo)
+                  }}
+                >
+                  Remove
+                </button>
+              </div>
+            )
+          })}
         </div>
       </div>
     )
