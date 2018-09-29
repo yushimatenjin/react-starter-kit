@@ -6,9 +6,12 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5",
+    "reactstrap": "^6.4.0",
     "redux": "^4.0.0",
     "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.3.0",
+    "request-promise-native": "^1.0.5",
     "styled-components": "^3.4.9"
   },
   "scripts": {
@@ -27,6 +30,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^2.7.0",
     "eslint-plugin-react": "^7.11.1",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "redux-devtools-extension": "^2.13.5"
   }
 }
