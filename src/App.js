@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import './App.css'
-import Todo from './components/Todo'
-import { add, remove, reset } from './redux/todo/actions'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import "./App.css";
+import Todo from "./components/Todo";
+import { add, remove, reset } from "./redux/todo/actions";
+import { connect } from "react-redux";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      inputTodo: ''
-    }
+      inputTodo: ""
+    };
   }
   render() {
-    const { inputTodo } = this.state
-    const { add, reset, remove, todos } = this.props
+    const { inputTodo } = this.state;
+    const { add, reset, remove, todos } = this.props;
 
     return (
       <div className="App">
@@ -25,58 +25,44 @@ class App extends Component {
             onChange={() => {
               this.setState({
                 inputTodo: this.inputTodo.value
-              })
+              });
             }}
           />
           <button
             onClick={() => {
-              add(inputTodo)
-              this.setState({ inputTodo: '' })
-              console.log(this.state.inputTodo)
+              add(inputTodo);
+              this.setState({ inputTodo: "" });
+              console.log(this.state.inputTodo);
             }}
           >
             Add
           </button>
           <button
             onClick={() => {
-              reset(inputTodo)
-              this.setState({ inputTodo: '' })
+              reset(inputTodo);
+              this.setState({ inputTodo: "" });
             }}
           >
             Reset
           </button>
-          {todos.map((todo, index) => {
-            return (
-              <div key={index}>
-                <Todo todo={todo} />
-                <button
-                  onClick={() => {
-                    remove(inputTodo)
-                  }}
-                >
-                  Remove
-                </button>
-              </div>
-            )
-          })}
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => {
-  return { todos: state.todo }
-}
+  return { todos: state.todo };
+};
 const mapDispatchToProps = dispatch => {
   return {
     add: inputTodo => dispatch(add(inputTodo)),
     remove: inputTodo => dispatch(remove(inputTodo)),
     reset: inputTodo => dispatch(reset(inputTodo))
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(App);
